@@ -31,6 +31,7 @@
 		9F67B2C32B17A2B800B6ECE8 /* MyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67B2C22B17A2B800B6ECE8 /* MyText.swift */; };
 		9F67B2C62B17A4AE00B6ECE8 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67B2C52B17A4AE00B6ECE8 /* Onboarding.swift */; };
 		9F67B2C92B18701400B6ECE8 /* ListLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67B2C82B18701400B6ECE8 /* ListLoop.swift */; };
+		9F67B2CB2B18A25D00B6ECE8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67B2CA2B18A25D00B6ECE8 /* Setting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		9F67B2C22B17A2B800B6ECE8 /* MyText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyText.swift; sourceTree = "<group>"; };
 		9F67B2C52B17A4AE00B6ECE8 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		9F67B2C82B18701400B6ECE8 /* ListLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLoop.swift; sourceTree = "<group>"; };
+		9F67B2CA2B18A25D00B6ECE8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				9F67B2C22B17A2B800B6ECE8 /* MyText.swift */,
 				9F67B2C52B17A4AE00B6ECE8 /* Onboarding.swift */,
 				9F67B2C82B18701400B6ECE8 /* ListLoop.swift */,
+				9F67B2CA2B18A25D00B6ECE8 /* Setting.swift */,
 			);
 			path = Part2;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				9F67B2AC2B15956900B6ECE8 /* Selection.swift in Sources */,
 				9F67B2B82B172FC100B6ECE8 /* MyGeneric.swift in Sources */,
 				9F67B2B62B16D0A400B6ECE8 /* MyCar.swift in Sources */,
+				9F67B2CB2B18A25D00B6ECE8 /* Setting.swift in Sources */,
 				9F67B2C12B17A1EC00B6ECE8 /* MyButton.swift in Sources */,
 				9F67B2A82B14B04900B6ECE8 /* Diff.swift in Sources */,
 				9F67B2B02B15B1D100B6ECE8 /* Option.swift in Sources */,
