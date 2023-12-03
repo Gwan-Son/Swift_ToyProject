@@ -8,11 +8,33 @@
 import SwiftUI
 
 struct Onboarding1: View {
+    
+    let onboardingTitle: String
+    let backgroungColor: Color
+    let isButtonTrue: Bool
+    @Binding var showModal: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            backgroungColor.ignoresSafeArea()
+            VStack{
+                Text(onboardingTitle)
+                if(isButtonTrue){
+                    Button(action: {
+                        showModal = false
+                    }, label: {
+                        Text("Start")
+                            .padding()
+                            .background(.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    })
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    Onboarding1()
+    Onboarding1(onboardingTitle: "온보딩 테스트", backgroungColor: .blue, isButtonTrue: false, showModal: .constant(true))
 }

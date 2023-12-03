@@ -13,34 +13,7 @@ struct MyApp: View {
     
     var body: some View {
         TabView{
-            NavigationStack{
-                List{
-                    NavigationLink(
-                        destination: Text("첫 번째 하위페이지입니다."),
-                        label: {
-                            Text("첫 번째 하위페이지")
-                        })
-                    
-                    NavigationLink(
-                        destination: Text("두 번째 하위페이지입니다."),
-                        label: {
-                            Text("두 번째 하위페이지")
-                        })
-                    
-                    NavigationLink(
-                        destination: Text("세 번째 하위페이지입니다."),
-                        label: {
-                            Text("세 번째 하위페이지")
-                        })
-                    
-                    NavigationLink(
-                        destination: Text("네 번째 하위페이지입니다."),
-                        label: {
-                            Text("네 번째 하위페이지")
-                        })
-                }
-                .navigationTitle("리스트")
-            }
+            FirstList()
                 .tabItem {
                     Label("투데이",
                           systemImage: "doc.text.image.fill")}
@@ -69,29 +42,11 @@ struct MyApp: View {
         }
         .sheet(isPresented: $showModal, content: {
             TabView{
-                ZStack{
-                    Color.blue.ignoresSafeArea()
-                    Text("온보딩1")
-                }
-                ZStack{
-                    Color.green.ignoresSafeArea()
-                    Text("온보딩2")
-                }
-                ZStack{
-                    Color.red.ignoresSafeArea()
-                    VStack{
-                        Text("온보딩3")
-                        Button(action: {
-                            showModal = false
-                        }, label: {
-                            Text("Start")
-                                .padding()
-                                .background(.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        })
-                    }
-                }
+                Onboarding1(onboardingTitle: "온보딩 1", backgroungColor: .blue,isButtonTrue: false,showModal: $showModal)
+                
+                Onboarding1(onboardingTitle: "온보딩 2", backgroungColor: .green,isButtonTrue: false,showModal: $showModal)
+                
+                Onboarding1(onboardingTitle: "온보딩 3", backgroungColor: .red, isButtonTrue: true, showModal: $showModal)
             }
             .tabViewStyle(.page)
         })

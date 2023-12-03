@@ -9,7 +9,34 @@ import SwiftUI
 
 struct FirstList: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            List{
+                NavigationLink(
+                    destination: Text("첫 번째 하위페이지입니다."),
+                    label: {
+                        Text("첫 번째 하위페이지")
+                    })
+                
+                NavigationLink(
+                    destination: Text("두 번째 하위페이지입니다."),
+                    label: {
+                        Text("두 번째 하위페이지")
+                    })
+                
+                NavigationLink(
+                    destination: Text("세 번째 하위페이지입니다."),
+                    label: {
+                        Text("세 번째 하위페이지")
+                    })
+                
+                NavigationLink(
+                    destination: Text("네 번째 하위페이지입니다."),
+                    label: {
+                        Text("네 번째 하위페이지")
+                    })
+            }
+            .navigationTitle("리스트")
+        }
     }
 }
 

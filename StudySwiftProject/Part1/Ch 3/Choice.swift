@@ -3,7 +3,7 @@
 //  StudySwiftProject
 //
 //  Created by 심관혁 on 11/28/23.
-//  04. 열거형
+//  Ch 3. 04. 열거형
 
 import SwiftUI
 
