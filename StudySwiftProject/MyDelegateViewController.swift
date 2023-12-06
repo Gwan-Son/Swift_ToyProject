@@ -3,27 +3,44 @@
 //  StudySwiftProject
 //
 //  Created by 심관혁 on 12/5/23.
-//
+//  Ch 5. 02.
 
 import UIKit
 
+protocol AdminDelegate{
+    func doTask()
+}
+
 class MyDelegateViewController: UIViewController {
 
+    @IBOutlet weak var NameTextField: UITextField!
+    @IBOutlet weak var NameLabel: UILabel!
+    var admin: Admin?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Admin(delegate: self)
+        admin?.delegate = self
+        
+    }
+    @IBAction func DidTabButton(_ sender: Any) {
+        if let name = NameTextField.text{
+            NameLabel.text = "Hello \(name)!"
+        }
+        admin?.delegate.doTask()
+    }
+}
 
-        // Do any additional setup after loading the view.
+
+extension MyDelegateViewController: AdminDelegate{
+    func doTask() {
+        print("저 지금 일 잘하고 있습니다.")
     }
     
+    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+struct Admin{
+    var delegate: AdminDelegate
 }

@@ -3,27 +3,25 @@
 //  StudySwiftProject
 //
 //  Created by 심관혁 on 12/5/23.
-//
+//  Ch 4. 04.
 
 import UIKit
 
 class MyViewController: UIViewController {
 
+    @IBOutlet weak var NameTextField: UITextField!
+    @IBOutlet weak var helloLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .red
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func DidTabButton(_ sender: Any) {
+        if let name = NameTextField.text{
+            helloLabel.text = "Hello \(name)!"
+        }
     }
-    */
-
+    
 }

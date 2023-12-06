@@ -13,7 +13,7 @@ struct Half: View {
     var body: some View {
         List{
             ForEach(name, id: \.self) { names in
-                var welcome = sayHi(to: names)
+                let welcome = sayHi(to: names)
                 if(names == "관슨"){
                     Text("기다렸어요. \(welcome)")
                 }

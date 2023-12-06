@@ -40,6 +40,14 @@
 		9F9B7A962B19AE4100FD5431 /* MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B7A952B19AE4100FD5431 /* MyApp.swift */; };
 		9F9B7A992B1CD4BD00FD5431 /* FirstList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B7A982B1CD4BD00FD5431 /* FirstList.swift */; };
 		9F9B7A9B2B1CD4EA00FD5431 /* Onboarding1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B7A9A2B1CD4EA00FD5431 /* Onboarding1.swift */; };
+		9F9B7AA02B1EBC1900FD5431 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B7A9F2B1EBC1900FD5431 /* MyViewController.swift */; };
+		9F9B7AA22B1EC4E600FD5431 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B7AA12B1EC4E600FD5431 /* MyTableViewController.swift */; };
+		9F9B7AA42B1ECC1200FD5431 /* MyDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B7AA32B1ECC1200FD5431 /* MyDelegateViewController.swift */; };
+		9F9B7AA62B1EF5E300FD5431 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B7AA52B1EF5E300FD5431 /* TodoViewController.swift */; };
+		9F9B7AA82B1F0BE700FD5431 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B7AA72B1F0BE700FD5431 /* GreenViewController.swift */; };
+		9F9B7AAA2B1F0C2A00FD5431 /* IndigoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B7AA92B1F0C2A00FD5431 /* IndigoViewController.swift */; };
+		9F9B7AAC2B1F3A4000FD5431 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B7AAB2B1F3A4000FD5431 /* ProfileViewController.swift */; };
+		9F9B7AAE2B1F3BDF00FD5431 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B7AAD2B1F3BDF00FD5431 /* ProfileDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +86,14 @@
 		9F9B7A952B19AE4100FD5431 /* MyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApp.swift; sourceTree = "<group>"; };
 		9F9B7A982B1CD4BD00FD5431 /* FirstList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstList.swift; sourceTree = "<group>"; };
 		9F9B7A9A2B1CD4EA00FD5431 /* Onboarding1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1.swift; sourceTree = "<group>"; };
+		9F9B7A9F2B1EBC1900FD5431 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		9F9B7AA12B1EC4E600FD5431 /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
+		9F9B7AA32B1ECC1200FD5431 /* MyDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDelegateViewController.swift; sourceTree = "<group>"; };
+		9F9B7AA52B1EF5E300FD5431 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		9F9B7AA72B1F0BE700FD5431 /* GreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
+		9F9B7AA92B1F0C2A00FD5431 /* IndigoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndigoViewController.swift; sourceTree = "<group>"; };
+		9F9B7AAB2B1F3A4000FD5431 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9F9B7AAD2B1F3BDF00FD5431 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +136,14 @@
 				9F67B2C72B17AB6500B6ECE8 /* Part3 */,
 				9F67B2C42B17A41B00B6ECE8 /* Part1 */,
 				9F67B2BF2B17557000B6ECE8 /* Part2 */,
+				9F9B7A9F2B1EBC1900FD5431 /* MyViewController.swift */,
+				9F9B7AA12B1EC4E600FD5431 /* MyTableViewController.swift */,
+				9F9B7AA32B1ECC1200FD5431 /* MyDelegateViewController.swift */,
+				9F9B7AA52B1EF5E300FD5431 /* TodoViewController.swift */,
+				9F9B7AA72B1F0BE700FD5431 /* GreenViewController.swift */,
+				9F9B7AA92B1F0C2A00FD5431 /* IndigoViewController.swift */,
+				9F9B7AAB2B1F3A4000FD5431 /* ProfileViewController.swift */,
+				9F9B7AAD2B1F3BDF00FD5431 /* ProfileDetailViewController.swift */,
 			);
 			path = StudySwiftProject;
 			sourceTree = "<group>";
@@ -300,12 +324,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F67B2BC2B1751A400B6ECE8 /* SimpleView.swift in Sources */,
+				9F9B7AA42B1ECC1200FD5431 /* MyDelegateViewController.swift in Sources */,
 				9F67B2BE2B1753D300B6ECE8 /* Layout.swift in Sources */,
 				9F67B2D62B18F69900B6ECE8 /* Navigation.swift in Sources */,
+				9F9B7AA22B1EC4E600FD5431 /* MyTableViewController.swift in Sources */,
 				9F67B2D42B18F4D600B6ECE8 /* Detail.swift in Sources */,
 				9F67B2C62B17A4AE00B6ECE8 /* Onboarding.swift in Sources */,
 				9F67B2AC2B15956900B6ECE8 /* Selection.swift in Sources */,
 				9F67B2B82B172FC100B6ECE8 /* MyGeneric.swift in Sources */,
+				9F9B7AAE2B1F3BDF00FD5431 /* ProfileDetailViewController.swift in Sources */,
 				9F67B2D02B18F36900B6ECE8 /* Modal.swift in Sources */,
 				9F67B2D82B196E0100B6ECE8 /* MyTab.swift in Sources */,
 				9F67B2B62B16D0A400B6ECE8 /* MyCar.swift in Sources */,
@@ -319,16 +346,21 @@
 				9F67B2A42B14914600B6ECE8 /* Half.swift in Sources */,
 				9F1C075C2B0888CB006A9E40 /* ViewController.swift in Sources */,
 				9F1C07582B0888CB006A9E40 /* AppDelegate.swift in Sources */,
+				9F9B7AAA2B1F0C2A00FD5431 /* IndigoViewController.swift in Sources */,
 				9F67B2AE2B159B4900B6ECE8 /* Nil.swift in Sources */,
+				9F9B7AA02B1EBC1900FD5431 /* MyViewController.swift in Sources */,
 				9F67B2C92B18701400B6ECE8 /* ListLoop.swift in Sources */,
 				9F9B7A962B19AE4100FD5431 /* MyApp.swift in Sources */,
 				9F67B2BA2B174F8800B6ECE8 /* ContentView.swift in Sources */,
 				9F67B2C32B17A2B800B6ECE8 /* MyText.swift in Sources */,
 				9F67B2B42B15D2E700B6ECE8 /* Exception.swift in Sources */,
 				9F67B2DA2B198DAA00B6ECE8 /* TabDetail.swift in Sources */,
+				9F9B7AA62B1EF5E300FD5431 /* TodoViewController.swift in Sources */,
 				9F67B2B22B15B48600B6ECE8 /* Sample.swift in Sources */,
 				9F1C075A2B0888CB006A9E40 /* SceneDelegate.swift in Sources */,
+				9F9B7AAC2B1F3A4000FD5431 /* ProfileViewController.swift in Sources */,
 				9F9B7A992B1CD4BD00FD5431 /* FirstList.swift in Sources */,
+				9F9B7AA82B1F0BE700FD5431 /* GreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
