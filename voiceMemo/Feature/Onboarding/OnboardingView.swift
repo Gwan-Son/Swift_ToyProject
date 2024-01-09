@@ -6,15 +6,15 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @StateObject private var onBoardingViewModel = OnboardingViewModel()
-    var body: some View {
-        // TODO: - 화면 전환 구현 필요
-        OnboardingContentView(onboardingViewModel: onBoardingViewModel)
-    }
+    @StateObject private var onboardingViewModel = OnboardingViewModel()
+  var body: some View {
+      // TODO: - 화면 전환 구현 필요
+      OnboardingContentView(onboardingViewModel: onboardingViewModel)
+  }
 }
 
 // MARK: - 온보딩 콘텐츠 뷰
-private struct OnboardingContentView: View{
+private struct OnboardingContentView: View {
     @ObservedObject private var onboardingViewModel: OnboardingViewModel
     
     fileprivate init(onboardingViewModel: OnboardingViewModel) {
@@ -22,40 +22,43 @@ private struct OnboardingContentView: View{
     }
     
     fileprivate var body: some View {
-        VStack{
-            
+        VStack {
+            // 온보딩 셀리스트 뷰
             OnboardingCellListView(onboardingViewModel: onboardingViewModel)
             
             Spacer()
             
+            // 시작 버튼 뷰
             StartBtnView()
         }
         .edgesIgnoringSafeArea(.top)
     }
-    
 }
 
 // MARK: - 온보딩 셀 리스트 뷰
-private struct OnboardingCellListView: View{
-    @ObservableObject private var onboardingViewModel: OnboardingViewModel
-    @State private var selectedIndex: Int
+private struct OnboardingCellListView: View {
+    @ObservedObject private var onboardingViewModel: OnboardingViewModel
+    @State private var seletedIndex: Int
     
-    fileprivate init(onboardingViewModel: OnboardingViewModel, selectedIndex: Int = 0) {
+    fileprivate init(
+        onboardingViewModel: OnboardingViewModel,
+        seletedIndex: Int = 0
+    ) {
         self.onboardingViewModel = onboardingViewModel
-        self.selectedIndex = selectedIndex
+        self.seletedIndex = seletedIndex
     }
     
     fileprivate var body: some View {
-        TabView(selection: $selectedIndex){
-            ForEach(Array(onboardingViewModel.onBoardingContents.enumerated()), id: \.element) { index, onboardingContent in
-                OnboardingCellView(onboardingContent: onboardingContent)
+        TabView(selection: $seletedIndex) {
+            ForEach(Array(onboardingViewModel.onboardingContents.enumerated()), id: \.element) { index, onboardingContent in
+                    OnboardingCellView(onboardingContent: onboardingContent)
                     .tag(index)
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 1.5)
         .background(
-            selectedIndex % 2 == 0
+            seletedIndex % 2 == 0
             ? Color.customSky
             : Color.customBackgroundGreen
         )
@@ -72,23 +75,27 @@ private struct OnboardingCellView: View {
     }
     
     fileprivate var body: some View {
-        VStack{
+        VStack {
             Image(onboardingContent.imageFileName)
                 .resizable()
                 .scaledToFit()
             
-            HStack{
+            HStack {
                 Spacer()
-                    .frame(height: 46)
                 
-                Text(onboardingContent.title)
-                    .font(.system(size: 16,weight: .bold))
-                
-                Spacer()
-                    .frame(height: 5)
-                
-                Text(onboardingContent.subTitle)
-                    .font(.system(size: 16))
+                VStack {
+                    Spacer()
+                        .frame(height: 46)
+                    
+                    Text(onboardingContent.title)
+                        .font(.system(size: 16, weight: .bold))
+                    
+                    Spacer()
+                        .frame(height: 5)
+                    
+                    Text(onboardingContent.subTitle)
+                        .font(.system(size: 16))
+                }
                 
                 Spacer()
             }
@@ -103,12 +110,12 @@ private struct OnboardingCellView: View {
 private struct StartBtnView: View {
     fileprivate var body: some View {
         Button(
-            action: {},
+            action: { },
             label: {
                 HStack {
                     Text("시작하기")
-                        .font(.system(size: 16,weight: .medium))
-                        .foregroundStyle(.customGreen)
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundColor(.customGreen)
                     
                     Image("startHome")
                         .renderingMode(.template)
@@ -120,6 +127,8 @@ private struct StartBtnView: View {
     }
 }
 
-#Preview {
+struct OnboardingView_Previews: PreviewProvider {
+  static var previews: some View {
     OnboardingView()
+  }
 }
