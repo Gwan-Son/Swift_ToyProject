@@ -8,37 +8,40 @@ import SwiftUI
 struct TodoListView: View {
     @EnvironmentObject private var pathModel: PathModel
     @EnvironmentObject private var todoListViewModel: TodoListViewModel
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
-        ZStack {
-            // 투두 셀 리스트
-            VStack {
-                if !todoListViewModel.todos.isEmpty {
-                    CustomNavigationBar(
-                        isDisplayLeftBtn: false,
-                        rightBtnAction: {
-                            todoListViewModel.navigationRightBtnTapped()
-                        },
-                        rightBtnType: todoListViewModel.navigationBarRightBtnMode
-                    )
-                } else {
-                    Spacer()
-                        .frame(height: 30)
-                }
-                TitleView()
-                    .padding(.top, 20)
-                
-                if todoListViewModel.todos.isEmpty {
-                    AnnouncementView()
-                } else {
-                    TodoListContentView()
+        WriteBtnView(
+            content: {
+                VStack {
+                    if !todoListViewModel.todos.isEmpty {
+                        CustomNavigationBar(
+                            isDisplayLeftBtn: false,
+                            rightBtnAction: {
+                                todoListViewModel.navigationRightBtnTapped()
+                            },
+                            rightBtnType: todoListViewModel.navigationBarRightBtnMode
+                        )
+                    } else {
+                        Spacer()
+                            .frame(height: 30)
+                    }
+                    TitleView()
                         .padding(.top, 20)
+                    
+                    if todoListViewModel.todos.isEmpty {
+                        AnnouncementView()
+                    } else {
+                        TodoListContentView()
+                            .padding(.top, 20)
+                    }
                 }
+            },
+            action: {
+                pathModel.paths.append(.todoView)
             }
-            WriteTodoBtnView()
-                .padding(.trailing, 20)
-                .padding(.bottom, 50)
-        }
+        )
+        
         .alert(
             "To do list \(todoListViewModel.removeTodosCount)개 삭제하시겠습니까?",
             isPresented: $todoListViewModel.isDisplayRemoveTodoAlert
@@ -48,6 +51,12 @@ struct TodoListView: View {
             }
             Button("취소", role: .cancel) { }
         }
+        .onChange(
+            of: todoListViewModel.todos,
+            perform: { todos in
+                homeViewModel.setTodosCount(todos.count)
+            }
+        )
     }
 }
 
