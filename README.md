@@ -1,5 +1,5 @@
 # 음성메모 어플리케이션
-SwiftUI로 구현한 간단한 음성메모 및 타이머 어플리케이션.
+SwiftUI로 구현한 간단한 음성메모 및 타이머 어플리케이션입니다.
 <p align="center" width="100%">
   <img src="https://github.com/Gwan-Son/voiceMemo/assets/38202152/ab780213-cb30-42c4-89ba-e8b0f9f22bf8" width="40%" alt="Onboarding">
   <img src="https://github.com/Gwan-Son/voiceMemo/assets/38202152/308927d0-1714-4282-90ca-d1eb7e93e22c" width="40%" alt="Home">
