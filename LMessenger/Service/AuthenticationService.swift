@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol AuthenticationServiceType {
+    
+}
+
+class AuthenticationService: AuthenticationServiceType {
+    
+}
