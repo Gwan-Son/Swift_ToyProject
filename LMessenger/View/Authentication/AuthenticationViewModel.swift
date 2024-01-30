@@ -14,11 +14,23 @@ enum AuthenticationState {
 
 class AuthenticationViewModel: ObservableObject {
     
+    enum Action{
+        case googleLogin
+    }
+    
     @Published var authenticationState: AuthenticationState = .unauthenticated
     
     private var container: DIContainer
     
     init(container: DIContainer) {
         self.container = container
+    }
+    
+    func send(action: Action){
+        switch action{
+        case .googleLogin:
+            // TODO: -
+            return
+        }
     }
 }
