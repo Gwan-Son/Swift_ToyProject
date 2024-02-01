@@ -27,7 +27,6 @@ struct HomeView: View {
                 }
                 .padding(.horizontal, 30)
                 
-                // TODO: - 친구 목록
                 if viewModel.users.isEmpty {
                     Spacer(minLength: 89)
                     emptyView
@@ -35,9 +34,15 @@ struct HomeView: View {
                     ForEach(viewModel.users, id: \.id) { user in
                         HStack(spacing: 8) {
                             Image("person")
+                                .resizable()
                                 .frame(width: 40)
-                                
+                                .clipShape(Circle())
+                            Text(user.name)
+                                .font(.system(size: 12))
+                                .foregroundColor(.bkText)
+                            Spacer()
                         }
+                        .padding(.horizontal, 30)
                     }
                 }
             }
@@ -68,6 +73,7 @@ struct HomeView: View {
             Spacer()
             
             Image("person")
+                .resizable()
                 .frame(width: 52, height: 52)
                 .clipShape(Circle())
         }
