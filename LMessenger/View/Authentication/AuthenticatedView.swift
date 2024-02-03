@@ -16,6 +16,7 @@ struct AuthenticatedView: View {
                     .environmentObject(authViewModel)
             case .authenticated:
                 MainTabView()
+                    .environmentObject(authViewModel)
             }
         }
         .onAppear {
