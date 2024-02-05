@@ -20,13 +20,19 @@ protocol ContactServiceType {
 class ContactService: ContactServiceType {
     
     func fetchContacts() -> AnyPublisher<[User], ServiceError> {
-        Empty().eraseToAnyPublisher()
+        Future { [weak self] promise in
+            self?.fetchContacts {
+                promise($0)
+            }
+        }
+        .mapError{ .error($0) }
+        .eraseToAnyPublisher()
     }
     
     private func fetchContacts(completion: @escaping (Result<[User], Error>) -> Void) {
         let store = CNContactStore()
         
-        store.requestAccess(for: .contacts) { granted, error in
+        store.requestAccess(for: .contacts) { [weak self] granted, error in
             if let error {
                 completion(.failure(error))
                 return
@@ -37,7 +43,7 @@ class ContactService: ContactServiceType {
                 return
             }
             
-            // TODO: - 유저의 연락처 불러오기
+            self?.fetchContacts(store: store, completion: completion)
         }
     }
     
