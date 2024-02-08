@@ -24,6 +24,9 @@
 		9F75E4152B625AFD00BDC8C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75E4142B625AFD00BDC8C5 /* AppDelegate.swift */; };
 		9F75E4172B625C4D00BDC8C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F75E4162B625C4D00BDC8C5 /* GoogleService-Info.plist */; };
 		9F75E41A2B625CE000BDC8C5 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75E4192B625CE000BDC8C5 /* AuthenticationService.swift */; };
+		9F83761B2B73136900568EC5 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83761A2B73136900568EC5 /* MyProfileViewModel.swift */; };
+		9F83761D2B731B8400568EC5 /* MyProfileMenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83761C2B731B8400568EC5 /* MyProfileMenuType.swift */; };
+		9F83761F2B7322D000568EC5 /* MyProfileDescEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83761E2B7322D000568EC5 /* MyProfileDescEditView.swift */; };
 		9F99C0EA2B6A3F7E005F7B78 /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F99C0E92B6A3F7E005F7B78 /* RandomNonceString.swift */; };
 		9F99C0EC2B6A3F84005F7B78 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F99C0EB2B6A3F84005F7B78 /* SHA256.swift */; };
 		9F99C0EE2B6AA48B005F7B78 /* MainTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F99C0ED2B6AA48B005F7B78 /* MainTabType.swift */; };
@@ -91,6 +94,9 @@
 		9F75E4162B625C4D00BDC8C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F75E4182B625C8D00BDC8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9F75E4192B625CE000BDC8C5 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		9F83761A2B73136900568EC5 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
+		9F83761C2B731B8400568EC5 /* MyProfileMenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileMenuType.swift; sourceTree = "<group>"; };
+		9F83761E2B7322D000568EC5 /* MyProfileDescEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDescEditView.swift; sourceTree = "<group>"; };
 		9F99C0E92B6A3F7E005F7B78 /* RandomNonceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNonceString.swift; sourceTree = "<group>"; };
 		9F99C0EB2B6A3F84005F7B78 /* SHA256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 		9F99C0ED2B6AA48B005F7B78 /* MainTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabType.swift; sourceTree = "<group>"; };
@@ -344,6 +350,9 @@
 			children = (
 				9F9B03C02B70B39800D743C1 /* MyProfileView.swift */,
 				9F9B03C22B70B3A000D743C1 /* OtherProfileView.swift */,
+				9F83761A2B73136900568EC5 /* MyProfileViewModel.swift */,
+				9F83761C2B731B8400568EC5 /* MyProfileMenuType.swift */,
+				9F83761E2B7322D000568EC5 /* MyProfileDescEditView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -539,6 +548,7 @@
 				9F99C0F42B6B832D005F7B78 /* ChatListView.swift in Sources */,
 				723ABD892AFFF1B800C260F1 /* AuthenticatedView.swift in Sources */,
 				9F99C0F22B6B8325005F7B78 /* HomeView.swift in Sources */,
+				9F83761B2B73136900568EC5 /* MyProfileViewModel.swift in Sources */,
 				9F75E4152B625AFD00BDC8C5 /* AppDelegate.swift in Sources */,
 				9F99C1062B6C0EF9005F7B78 /* Constant.swift in Sources */,
 				72E4BEFC2B00B871007A1060 /* Color+Extension.swift in Sources */,
@@ -549,6 +559,8 @@
 				9FAD2F502B69685600B01344 /* ServiceError.swift in Sources */,
 				9F9B03C12B70B39800D743C1 /* MyProfileView.swift in Sources */,
 				9FAD2F432B678CA700B01344 /* MainTabView.swift in Sources */,
+				9F83761F2B7322D000568EC5 /* MyProfileDescEditView.swift in Sources */,
+				9F83761D2B731B8400568EC5 /* MyProfileMenuType.swift in Sources */,
 				9F9B03C32B70B3A000D743C1 /* OtherProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
