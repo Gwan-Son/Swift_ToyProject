@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MyProfileDescEditView: View {
+    @Environment(\.dismiss) var dismiss
     @State var description: String
     
     var onCompleted: (String) -> Void
@@ -20,13 +21,17 @@ struct MyProfileDescEditView: View {
             }
             .toolbar {
                 Button("완료") {
+                    dismiss()
                     onCompleted(description)
                 }
+                .disabled(description.isEmpty)
             }
         }
     }
 }
 
 #Preview {
-    MyProfileDescEditView(description: "")
+    MyProfileDescEditView(description: "") { _ in
+        
+    }
 }

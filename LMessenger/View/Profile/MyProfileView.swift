@@ -70,12 +70,19 @@ struct MyProfileView: View {
     
     var descriptionView: some View {
         Button(action: {
-            // TODO: -
+            viewModel.isPresentedDescEditView.toggle()
         }, label: {
             Text(viewModel.userInfo?.description ?? "상태메시지를 입력해주세요.")
                 .font(.system(size: 14))
                 .foregroundColor(.bgWh)
         })
+        .sheet(isPresented: $viewModel.isPresentedDescEditView) {
+            MyProfileDescEditView(description: viewModel.userInfo?.description ?? "") { willBeDesc in
+                Task {
+                    await viewModel.updateDescription(willBeDesc)
+                }
+            }
+        }
     }
     
     var menuView: some View {
