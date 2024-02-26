@@ -12,7 +12,11 @@ class FrameWorkCell: UICollectionViewCell {
     @IBOutlet weak var FrameworkImage: UIImageView!
     @IBOutlet weak var FrameworkLabel: UILabel!
     
-    
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+        FrameworkLabel.numberOfLines = 1
+        FrameworkLabel.adjustsFontSizeToFitWidth = true
+    }
     
     func configure(_ data: AppleFramework){
         FrameworkImage.image = UIImage(named: data.imageName)
