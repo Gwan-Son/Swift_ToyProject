@@ -10,8 +10,11 @@ import UIKit
 class FocusViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var extendButton: UIButton!
     
-    let focusList: [Focus] = Focus.list
+    var presentated: Bool = false
+    
+    var focusList: [Focus] = Focus.list
     
     enum Section {
         case main
@@ -21,6 +24,8 @@ class FocusViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        extendButton.layer.cornerRadius = 10
         
         datasource = UICollectionViewDiffableDataSource<Section,Focus>(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FocusCell", for: indexPath) as? FocusCell else {
@@ -38,6 +43,8 @@ class FocusViewController: UIViewController {
         datasource.apply(snapshot)
         
         collectionView.collectionViewLayout = layout()
+        
+        updateButtonTitle()
     }
     
     private func layout() -> UICollectionViewLayout{
@@ -55,5 +62,21 @@ class FocusViewController: UIViewController {
         
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
+    }
+    
+    func updateButtonTitle(){
+        let title = presentated ? "See All":"See Recommendation"
+        extendButton.setTitle(title, for: .normal)
+    }
+    
+    @IBAction func buttonTapped(_ sender: Any) {
+        presentated.toggle()
+        self.focusList = presentated ? Focus.recommendations : Focus.list
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Focus>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(focusList, toSection: .main)
+        datasource.apply(snapshot)
+        
+        updateButtonTitle()
     }
 }

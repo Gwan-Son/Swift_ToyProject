@@ -78,18 +78,37 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vf-k8-flV">
+                                <rect key="frame" x="50" y="802" width="314" height="60"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="bfj-da-SEy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="See All">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="07K-eu-e7f" eventType="touchUpInside" id="yWN-mb-dIX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xIF-vf-ToX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="zAg-AC-cZ5" secondAttribute="bottom" id="0Hx-Jf-Cli"/>
+                            <constraint firstItem="8Vf-k8-flV" firstAttribute="leading" secondItem="xIF-vf-ToX" secondAttribute="leading" constant="50" id="0Jo-MW-ClN"/>
                             <constraint firstItem="zAg-AC-cZ5" firstAttribute="leading" secondItem="xIF-vf-ToX" secondAttribute="leading" id="7kz-7Y-SA4"/>
                             <constraint firstItem="xIF-vf-ToX" firstAttribute="trailing" secondItem="zAg-AC-cZ5" secondAttribute="trailing" id="IVo-B0-3fK"/>
+                            <constraint firstItem="xIF-vf-ToX" firstAttribute="bottom" secondItem="8Vf-k8-flV" secondAttribute="bottom" id="L5Z-vs-Efb"/>
+                            <constraint firstItem="8Vf-k8-flV" firstAttribute="centerX" secondItem="xIF-vf-ToX" secondAttribute="centerX" id="sNP-xf-7Gu"/>
                             <constraint firstItem="zAg-AC-cZ5" firstAttribute="top" secondItem="xIF-vf-ToX" secondAttribute="top" id="yri-gU-Yw0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="zAg-AC-cZ5" id="eVy-3S-n5w"/>
+                        <outlet property="extendButton" destination="8Vf-k8-flV" id="rkt-N1-JwT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqZ-hT-Jgd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -101,6 +120,9 @@
         <image name="cloud.heavyrain.fill" catalog="system" width="126" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
