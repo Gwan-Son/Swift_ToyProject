@@ -2,7 +2,7 @@
 //  BannerInfo.swift
 //  SpotifyPaywall
 //
-//  Created by joonwon lee on 2022/04/30.
+//  Created by 심관혁 on 2/28/24.
 //
 
 import Foundation
