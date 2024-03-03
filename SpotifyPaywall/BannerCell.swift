@@ -14,8 +14,7 @@ class BannerCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.backgroundColor = UIColor.systemIndigo
-        contentView.layer.cornerRadius = 10
+        self.layer.cornerRadius = 16
     }
     
     func configure(_ banner: BannerInfo) {
