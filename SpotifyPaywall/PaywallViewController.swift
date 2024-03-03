@@ -23,9 +23,8 @@ class PaywallViewController: UIViewController {
         case main
     }
     
-    typealias BannerInfo as? Item
     
-    var datasource: UICollectionViewDiffableDataSource<Section, Item>!
+    var datasource: UICollectionViewDiffableDataSource<Section, BannerInfo>!
     
      override func viewDidLoad() {
         super.viewDidLoad()
