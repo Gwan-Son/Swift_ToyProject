@@ -96,6 +96,8 @@ class FrameWorkViewController: UIViewController {
         dataSource.apply(snapshot)
         
         frameworkCollectionView.collectionViewLayout = layout()
+        
+        frameworkCollectionView.delegate = self
     }
     
     private func layout() -> UICollectionViewCompositionalLayout {
@@ -118,7 +120,11 @@ class FrameWorkViewController: UIViewController {
 
 extension FrameWorkViewController: UICollectionViewDelegate {
     // 셀이 클릭되었을 때
-    func collectionView(_ collectionView: UICollectionView, didBeginMultipleSelectionInteractionAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         print("selected Item: \(dataList[indexPath.item].name)")
+        
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "FrameworkDetailViewController") as! FrameworkDetailViewController
+        present(vc, animated: true)
     }
 }
