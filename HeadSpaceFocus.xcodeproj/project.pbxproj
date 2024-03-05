@@ -18,6 +18,11 @@
 		943BB57728151183005A1B6E /* Focus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943BB57628151183005A1B6E /* Focus.swift */; };
 		9F6D3B802B8F048D00584880 /* FocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6D3B7F2B8F048D00584880 /* FocusViewController.swift */; };
 		9F6D3B822B8F061F00584880 /* FocusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6D3B812B8F061E00584880 /* FocusCell.swift */; };
+		9FBD38B02B96C3EC00A0CFF4 /* QuickFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBD38AF2B96C3EC00A0CFF4 /* QuickFocus.swift */; };
+		9FBD38B22B96C44600A0CFF4 /* QuickFocus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBD38B12B96C44600A0CFF4 /* QuickFocus.storyboard */; };
+		9FBD38B42B96C45800A0CFF4 /* QuickFocusListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBD38B32B96C45800A0CFF4 /* QuickFocusListViewController.swift */; };
+		9FBD38B62B972DF100A0CFF4 /* QuickFocusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBD38B52B972DF100A0CFF4 /* QuickFocusCell.swift */; };
+		9FBD38B82B97380000A0CFF4 /* QuickFocusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBD38B72B97380000A0CFF4 /* QuickFocusHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		943BB57628151183005A1B6E /* Focus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Focus.swift; sourceTree = "<group>"; };
 		9F6D3B7F2B8F048D00584880 /* FocusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusViewController.swift; sourceTree = "<group>"; };
 		9F6D3B812B8F061E00584880 /* FocusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusCell.swift; sourceTree = "<group>"; };
+		9FBD38AF2B96C3EC00A0CFF4 /* QuickFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFocus.swift; sourceTree = "<group>"; };
+		9FBD38B12B96C44600A0CFF4 /* QuickFocus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuickFocus.storyboard; sourceTree = "<group>"; };
+		9FBD38B32B96C45800A0CFF4 /* QuickFocusListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFocusListViewController.swift; sourceTree = "<group>"; };
+		9FBD38B52B972DF100A0CFF4 /* QuickFocusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFocusCell.swift; sourceTree = "<group>"; };
+		9FBD38B72B97380000A0CFF4 /* QuickFocusHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFocusHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +117,12 @@
 				943BB54428150EFA005A1B6E /* SceneDelegate.swift */,
 				943BB57628151183005A1B6E /* Focus.swift */,
 				943BB54828150EFA005A1B6E /* Main.storyboard */,
+				9FBD38B12B96C44600A0CFF4 /* QuickFocus.storyboard */,
+				9FBD38B72B97380000A0CFF4 /* QuickFocusHeaderView.swift */,
+				9FBD38B52B972DF100A0CFF4 /* QuickFocusCell.swift */,
+				9FBD38B32B96C45800A0CFF4 /* QuickFocusListViewController.swift */,
 				9F6D3B812B8F061E00584880 /* FocusCell.swift */,
+				9FBD38AF2B96C3EC00A0CFF4 /* QuickFocus.swift */,
 				9F6D3B7F2B8F048D00584880 /* FocusViewController.swift */,
 				943BB54B28150EFB005A1B6E /* Assets.xcassets */,
 				943BB54D28150EFB005A1B6E /* LaunchScreen.storyboard */,
@@ -238,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				943BB54F28150EFB005A1B6E /* LaunchScreen.storyboard in Resources */,
+				9FBD38B22B96C44600A0CFF4 /* QuickFocus.storyboard in Resources */,
 				943BB54C28150EFB005A1B6E /* Assets.xcassets in Resources */,
 				943BB54A28150EFA005A1B6E /* Main.storyboard in Resources */,
 			);
@@ -264,8 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBD38B02B96C3EC00A0CFF4 /* QuickFocus.swift in Sources */,
+				9FBD38B42B96C45800A0CFF4 /* QuickFocusListViewController.swift in Sources */,
 				943BB57728151183005A1B6E /* Focus.swift in Sources */,
 				943BB54328150EFA005A1B6E /* AppDelegate.swift in Sources */,
+				9FBD38B62B972DF100A0CFF4 /* QuickFocusCell.swift in Sources */,
+				9FBD38B82B97380000A0CFF4 /* QuickFocusHeaderView.swift in Sources */,
 				9F6D3B822B8F061F00584880 /* FocusCell.swift in Sources */,
 				943BB54528150EFA005A1B6E /* SceneDelegate.swift in Sources */,
 				9F6D3B802B8F048D00584880 /* FocusViewController.swift in Sources */,

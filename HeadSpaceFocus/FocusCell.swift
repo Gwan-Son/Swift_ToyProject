@@ -12,11 +12,6 @@ class FocusCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var content: UILabel!
     @IBOutlet weak var image: UIImageView!
-    
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        image.image = nil
-//    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
