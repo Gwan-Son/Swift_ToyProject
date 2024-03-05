@@ -119,12 +119,13 @@ class FrameWorkViewController: UIViewController {
 }
 
 extension FrameWorkViewController: UICollectionViewDelegate {
-    // 셀이 클릭되었을 때
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    // 셀이 클릭되었을 때    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("selected Item: \(dataList[indexPath.item].name)")
         
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "FrameworkDetailViewController") as! FrameworkDetailViewController
+        vc.framework = dataList[indexPath.item]
         present(vc, animated: true)
     }
 }
