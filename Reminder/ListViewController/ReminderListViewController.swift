@@ -24,18 +24,7 @@ class ReminderListViewController: UICollectionViewController {
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
         
-        var snapshot = Snapshot()
-        snapshot.appendSections([0])
-        /* snapshot에 Item을 추가
-         var reminderTitles = [String]()
-         for reminder in Reminder.sampleData {
-            reminderTitles.append(reminder.title)
-         }
-         snapshot.appendItems(reminderTitles)
-         */
-        // 위의 코드 축약형
-        snapshot.appendItems(reminders.map {$0.id})
-        dataSource.apply(snapshot)
+        updateSnapshot()
         
         collectionView.dataSource = dataSource
     }
