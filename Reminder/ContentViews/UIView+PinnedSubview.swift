@@ -12,7 +12,7 @@ extension UIView {
         addSubview(subview)
         subview.translatesAutoresizingMaskIntoConstraints = false
         subview.topAnchor.constraint(equalTo: topAnchor, constant: insets.top).isActive = true
-        subview.leadingAnchor.constraint(equalTo: leftAnchor, constant: insets.left).isActive = true
+        subview.leadingAnchor.constraint(equalTo: leadingAnchor, constant: insets.left).isActive = true
         subview.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -1.0 * insets.right).isActive = true
         subview.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -1.0 * insets.bottom).isActive = true
         if let height {
