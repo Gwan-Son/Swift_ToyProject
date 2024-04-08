@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F6CFB942BC3E7B300B0A5E6 /* Color+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CFB932BC3E7B300B0A5E6 /* Color+Extenstion.swift */; };
 		9FC981D72BBF91A000180E3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC981D62BBF91A000180E3B /* AppDelegate.swift */; };
 		9FC981D92BBF91A000180E3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC981D82BBF91A000180E3B /* SceneDelegate.swift */; };
 		9FC981DB2BBF91A000180E3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC981DA2BBF91A000180E3B /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F6CFB932BC3E7B300B0A5E6 /* Color+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extenstion.swift"; sourceTree = "<group>"; };
 		9FC981D32BBF91A000180E3B /* DailySpark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailySpark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC981D62BBF91A000180E3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FC981D82BBF91A000180E3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F6CFB922BC3E7A200B0A5E6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9F6CFB932BC3E7B300B0A5E6 /* Color+Extenstion.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9FC981CA2BBF91A000180E3B = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 		9FC981D52BBF91A000180E3B /* DailySpark */ = {
 			isa = PBXGroup;
 			children = (
+				9F6CFB922BC3E7A200B0A5E6 /* Extensions */,
 				9FC981D62BBF91A000180E3B /* AppDelegate.swift */,
 				9FC981D82BBF91A000180E3B /* SceneDelegate.swift */,
 				9FC981DA2BBF91A000180E3B /* ViewController.swift */,
@@ -258,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6CFB942BC3E7B300B0A5E6 /* Color+Extenstion.swift in Sources */,
 				9FC981DB2BBF91A000180E3B /* ViewController.swift in Sources */,
 				9FC981D72BBF91A000180E3B /* AppDelegate.swift in Sources */,
 				9FC981D92BBF91A000180E3B /* SceneDelegate.swift in Sources */,
