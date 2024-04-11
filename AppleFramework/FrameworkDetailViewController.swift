@@ -7,10 +7,14 @@
 
 import UIKit
 import SafariServices
+import Combine
 
 class FrameworkDetailViewController: UIViewController {
-
-    var framework: AppleFramework = AppleFramework(name: "Unknown", imageName: "", urlString: "", description: "")
+    
+    // Combine
+    var subscriptions = Set<AnyCancellable>()
+    let learnMoreButtonTapped = PassthroughSubject<AppleFramework,Never>()
+    let selectedFramework = CurrentValueSubject<AppleFramework,Never>(AppleFramework(name: "Unknown", imageName: "", urlString: "", description: ""))
     
     @IBOutlet weak var frameworkImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -18,21 +22,31 @@ class FrameworkDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateUI()
+        bind()
     }
-
-    func updateUI() {
-        frameworkImage.image = UIImage(named: framework.imageName)
-        titleLabel.text = framework.name
-        descriptionLabel.text = framework.description
+    
+    private func bind() {
+        // UI update
+        selectedFramework
+            .receive(on: RunLoop.main)
+            .sink { [unowned self] framework in
+                self.frameworkImage.image = UIImage(named: framework.imageName)
+                self.titleLabel.text = framework.name
+                self.descriptionLabel.text = framework.description
+            }.store(in: &subscriptions)
+        
+        // ButtonTapped
+        learnMoreButtonTapped
+            .receive(on: RunLoop.main)
+            .compactMap{ URL(string: $0.urlString) }
+            .sink { [unowned self] url in
+                let safari = SafariServices.SFSafariViewController(url: url)
+                self.present(safari, animated: true)
+            }.store(in: &subscriptions)
     }
+    
     @IBAction func buttonTapped(_ sender: Any) {
         // Safari로 연결
-        guard let url = URL(string: framework.urlString) else {
-            return
-        }
-        
-        let safari = SafariServices.SFSafariViewController(url: url)
-        present(safari, animated: true)
+        learnMoreButtonTapped.send(selectedFramework.value)
     }
 }

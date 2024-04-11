@@ -9,66 +9,8 @@ import UIKit
 import Combine
 
 class FrameWorkViewController: UIViewController {
-//    UICollectionViewDataSource, UICollectionViewDelegateFlowLayout를 import 했던 것
-//    #1 기존 UICollectionVeiw 구현 코드
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return dataList.count
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FrameWorkCell", for: indexPath) as? FrameWorkCell else {
-//            return UICollectionViewCell()
-//        }
-//        cell.configure(dataList[indexPath.item])
-//        return cell
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        // 3줄
-//        
-//        let interItemSpacing: CGFloat = 10
-//        let padding: CGFloat = 16
-//        let width = (collectionView.bounds.width - interItemSpacing * 2 - padding * 2) / 3
-//        return CGSize(width: width, height: width * 1.5)
-//         
-//        // 2줄
-//        /*
-//         let interItemSpacing: CGFloat = 10
-//         let padding: CGFloat = 16
-//         let width = (collectionView.bounds.width - interItemSpacing - padding * 2) / 2
-//         return CGSize(width: width, height: width * 1.5)
-//         */
-//        // 4줄
-//        /*
-//         let interItemSpacing: CGFloat = 10
-//         let padding: CGFloat = 16
-//         let width = (collectionView.bounds.width - interItemSpacing * 3 - padding * 2) / 4
-//         return CGSize(width: width, height: width * 1.5)
-//         */
-//        
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
-//
-    
-    // #2 DiffableData
-    // diffable datasource
-    // - presentation
-    // snapshot
-    // - Data
-    // compositional Layout
-    // - layout
-
-    
     @IBOutlet weak var frameworkCollectionView: UICollectionView!
-    
-    
+
     // Combine
     var subscriptions = Set<AnyCancellable>()
     let didSelect = PassthroughSubject<AppleFramework, Never>()
@@ -82,21 +24,9 @@ class FrameWorkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        #1 기존 UICollectionVeiw 구현 코드
-//        frameworkCollectionView.dataSource = self
-//        frameworkCollectionView.delegate = self
-        
-//        frameworkCollectionView.contentInset = UIEdgeInsets(top: 20, left: 16, bottom: 0, right: 16)
-        
         configureCollectionView()
-        
         applySectionItems(dataList)
-        
         bind()
-        
-        frameworkCollectionView.collectionViewLayout = layout()
-        
-        frameworkCollectionView.delegate = self
     }
     
     private func bind() {
@@ -107,7 +37,8 @@ class FrameWorkViewController: UIViewController {
             .sink { [unowned self] framework in
             let storyboard = UIStoryboard(name: "Detail", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "FrameworkDetailViewController") as! FrameworkDetailViewController
-            vc.framework = framework
+            
+            vc.selectedFramework.send(framework)
             self.present(vc, animated: true)
         }.store(in: &subscriptions)
         // output: data, state 변경에 따라서, UI 업데이트 할 것
@@ -135,6 +66,9 @@ class FrameWorkViewController: UIViewController {
             cell.configure(itemIdentifier)
             return cell
         })
+        
+        frameworkCollectionView.collectionViewLayout = layout()
+        frameworkCollectionView.delegate = self
     }
     
     private func layout() -> UICollectionViewCompositionalLayout {
@@ -161,9 +95,5 @@ extension FrameWorkViewController: UICollectionViewDelegate {
         let framework = dataList[indexPath.item]
         print("selected Item: \(dataList[indexPath.item].name)")
         didSelect.send(framework)
-//        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "FrameworkDetailViewController") as! FrameworkDetailViewController
-//        vc.framework = dataList[indexPath.item]
-//        present(vc, animated: true)
     }
 }
