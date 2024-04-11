@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class FrameWorkViewController: UIViewController {
 //    UICollectionViewDataSource, UICollectionViewDelegateFlowLayout를 import 했던 것
@@ -66,7 +67,12 @@ class FrameWorkViewController: UIViewController {
 
     
     @IBOutlet weak var frameworkCollectionView: UICollectionView!
-    let dataList: [AppleFramework] = AppleFramework.list
+    
+    
+    // Combine
+    var subscriptions = Set<AnyCancellable>()
+    let didSelect = PassthroughSubject<AppleFramework, Never>()
+    @Published var dataList: [AppleFramework] = AppleFramework.list
     
     var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
     typealias Item = AppleFramework // AppleFramework를 Item으로 타입 이름 변경 -> DiffableDateSource에서 Section과 Item으로 표시하기 위해서.
@@ -82,6 +88,46 @@ class FrameWorkViewController: UIViewController {
         
 //        frameworkCollectionView.contentInset = UIEdgeInsets(top: 20, left: 16, bottom: 0, right: 16)
         
+        configureCollectionView()
+        
+        applySectionItems(dataList)
+        
+        bind()
+        
+        frameworkCollectionView.collectionViewLayout = layout()
+        
+        frameworkCollectionView.delegate = self
+    }
+    
+    private func bind() {
+        // input: 사용자의 입력을 받아서, 처리해야할 것
+        // item 선택 되었을 때 처리
+        didSelect
+            .receive(on: RunLoop.main)
+            .sink { [unowned self] framework in
+            let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "FrameworkDetailViewController") as! FrameworkDetailViewController
+            vc.framework = framework
+            self.present(vc, animated: true)
+        }.store(in: &subscriptions)
+        // output: data, state 변경에 따라서, UI 업데이트 할 것
+        // item 세팅이 되었을 때 컬렉션뷰를 업데이트
+        
+        $dataList
+            .receive(on: RunLoop.main)
+            .sink { [unowned self] list in
+            self.applySectionItems(list)
+        }.store(in: &subscriptions)
+    }
+    
+    private func applySectionItems(_ items: [Item], to sections: Section = .main) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections([sections])
+        snapshot.appendItems(items, toSection: sections)
+        dataSource.apply(snapshot)
+    }
+    
+    private func configureCollectionView() {
         dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: frameworkCollectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FrameWorkCell", for: indexPath) as? FrameWorkCell else{
                 return nil
@@ -89,15 +135,6 @@ class FrameWorkViewController: UIViewController {
             cell.configure(itemIdentifier)
             return cell
         })
-        
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(dataList, toSection: .main)
-        dataSource.apply(snapshot)
-        
-        frameworkCollectionView.collectionViewLayout = layout()
-        
-        frameworkCollectionView.delegate = self
     }
     
     private func layout() -> UICollectionViewCompositionalLayout {
@@ -121,11 +158,12 @@ class FrameWorkViewController: UIViewController {
 extension FrameWorkViewController: UICollectionViewDelegate {
     // 셀이 클릭되었을 때    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let framework = dataList[indexPath.item]
         print("selected Item: \(dataList[indexPath.item].name)")
-        
-        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "FrameworkDetailViewController") as! FrameworkDetailViewController
-        vc.framework = dataList[indexPath.item]
-        present(vc, animated: true)
+        didSelect.send(framework)
+//        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "FrameworkDetailViewController") as! FrameworkDetailViewController
+//        vc.framework = dataList[indexPath.item]
+//        present(vc, animated: true)
     }
 }
