@@ -66,11 +66,12 @@ class SearchViewController: UIViewController {
         $users
             .receive(on: RunLoop.main)
             .sink { users in
-                
+                var snapshot = NSDiffableDataSourceSnapshot<Section,Item>()
+                snapshot.appendSections([.main])
+                snapshot.appendItems(users, toSection: .main)
+                self.datasource.apply(snapshot)
             }.store(in: &subscription)
     }
-    // - 데이터 -> 뷰
-    //   - 검색된 사용자를 collectionView 업데이트
     // - 사용자 인터렉션 대응
     //   - 서치컨트롤에서 텍스트 -> 네트워크 요청
 }
