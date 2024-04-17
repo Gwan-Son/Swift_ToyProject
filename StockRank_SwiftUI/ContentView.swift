@@ -12,13 +12,24 @@ struct ContentView: View {
     @State var list = StockModel.list
     
     var body: some View {
-        ScrollView {
-            ForEach(list, id: \.self) { stock in
-                StockRankRow(stock: stock)
-                    .frame(height: 80)
-            }
+        
+        List(list, id: \.self) { stock in
+            StockRankRow(stock: stock)
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                .frame(height: 80)
         }
+        .listStyle(.plain)
         .background(.black)
+
+        
+//        List를 사용하지 않는 방법
+//        ScrollView {
+//            ForEach(list, id: \.self) { stock in
+//                StockRankRow(stock: stock)
+//                    .frame(height: 80)
+//            }
+//        }
+//        .background(.black)
     }
 }
 
