@@ -13,26 +13,26 @@ struct ContentView: View {
     
     var body: some View {
         
-        List($list) { $stock in
-            StockRankRow(stock: $stock)
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+        NavigationView {
+            List($list) { $stock in
+                ZStack {
+                    NavigationLink {
+                        StockDetailView(stock: $stock)
+                    } label: {
+                        EmptyView()
+                    }
+                    StockRankRow(stock: $stock)
+                }
+                .listRowInsets(EdgeInsets())
                 .frame(height: 80)
+            }
+            .listStyle(.plain)
+            .navigationTitle("Stock Rank")
         }
-        .listStyle(.plain)
-        .background(.black)
-
-        
-//        List를 사용하지 않는 방법
-//        ScrollView {
-//            ForEach(list, id: \.self) { stock in
-//                StockRankRow(stock: stock)
-//                    .frame(height: 80)
-//            }
-//        }
-//        .background(.black)
     }
 }
 
 #Preview {
     ContentView()
+        .preferredColorScheme(.dark)
 }
