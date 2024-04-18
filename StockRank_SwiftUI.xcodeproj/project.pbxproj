@@ -17,6 +17,7 @@
 		9F3EAB4E2BCFE8AF008AB725 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EAB4D2BCFE8AF008AB725 /* StockModel.swift */; };
 		9F3EAB502BCFEA61008AB725 /* StockRankRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EAB4F2BCFEA61008AB725 /* StockRankRow.swift */; };
 		9FEF3B5B2BD0EF89001A60D0 /* StockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF3B5A2BD0EF89001A60D0 /* StockDetailView.swift */; };
+		9FEF3B5D2BD0FC90001A60D0 /* StockRankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF3B5C2BD0FC90001A60D0 /* StockRankViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		9F3EAB4D2BCFE8AF008AB725 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
 		9F3EAB4F2BCFEA61008AB725 /* StockRankRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankRow.swift; sourceTree = "<group>"; };
 		9FEF3B5A2BD0EF89001A60D0 /* StockDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailView.swift; sourceTree = "<group>"; };
+		9FEF3B5C2BD0FC90001A60D0 /* StockRankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				9F3EAB232BCFE88E008AB725 /* StockRank_SwiftUIApp.swift */,
 				9F3EAB252BCFE88E008AB725 /* ContentView.swift */,
+				9FEF3B5C2BD0FC90001A60D0 /* StockRankViewModel.swift */,
 				9FEF3B5A2BD0EF89001A60D0 /* StockDetailView.swift */,
 				9F3EAB4F2BCFEA61008AB725 /* StockRankRow.swift */,
 				9F3EAB4D2BCFE8AF008AB725 /* StockModel.swift */,
@@ -271,6 +274,7 @@
 				9F3EAB502BCFEA61008AB725 /* StockRankRow.swift in Sources */,
 				9F3EAB242BCFE88E008AB725 /* StockRank_SwiftUIApp.swift in Sources */,
 				9F3EAB4E2BCFE8AF008AB725 /* StockModel.swift in Sources */,
+				9FEF3B5D2BD0FC90001A60D0 /* StockRankViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

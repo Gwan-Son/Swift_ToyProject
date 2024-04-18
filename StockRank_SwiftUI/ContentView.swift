@@ -9,15 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var list = StockModel.list
+    
+    @StateObject var viewModel = StockRankViewModel()
     
     var body: some View {
         
         NavigationView {
-            List($list) { $stock in
+            List($viewModel.models) { $stock in
                 ZStack {
                     NavigationLink {
-                        StockDetailView(stock: $stock)
+                        StockDetailView(viewModel: viewModel, stock: $stock)
                     } label: {
                         EmptyView()
                     }
