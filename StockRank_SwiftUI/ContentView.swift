@@ -13,8 +13,8 @@ struct ContentView: View {
     
     var body: some View {
         
-        List(list) { stock in
-            StockRankRow(stock: stock)
+        List($list) { $stock in
+            StockRankRow(stock: $stock)
                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 .frame(height: 80)
         }
