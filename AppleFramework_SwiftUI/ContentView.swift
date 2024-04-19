@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var frameworks: [AppleFramework] = AppleFramework.list
+    @StateObject var viewModel = FrameworkListViewModel()
     
     let layout: [GridItem] = [
         GridItem(.flexible()),
@@ -23,14 +23,22 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: layout) {
                     
-                    ForEach(frameworks) { item in
-                        FrameworkCell(framework: item)
+                    ForEach($viewModel.framework) { $item in
+                        FrameworkCell(framework: $item)
+                            .onTapGesture {
+                                viewModel.isShowingDetail = true
+                                viewModel.selectedItem = item
+                            }
                     }
                 }
                 .padding([.top,.leading,.trailing], 16)
             }
             .navigationTitle("☀️ Apple Framework")
         }
+        .sheet(isPresented: $viewModel.isShowingDetail, content: {
+            let vm = FrameworkDetailViewModel(framework: viewModel.selectedItem!)
+            FrameworkDetailView(viewModel: vm)
+        })
     }
 }
 

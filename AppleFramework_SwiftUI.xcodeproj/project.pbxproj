@@ -16,6 +16,10 @@
 		9F3EAB7B2BCFF8A3008AB725 /* AppleFramework_SwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EAB7A2BCFF8A3008AB725 /* AppleFramework_SwiftUIUITestsLaunchTests.swift */; };
 		9F3EAB882BCFFE10008AB725 /* FrameworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EAB872BCFFE10008AB725 /* FrameworkData.swift */; };
 		9F3EAB8A2BCFFEA1008AB725 /* FrameworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EAB892BCFFEA1008AB725 /* FrameworkCell.swift */; };
+		9FEF3B9B2BD23541001A60D0 /* FrameworkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF3B9A2BD23541001A60D0 /* FrameworkDetailView.swift */; };
+		9FEF3B9D2BD246E2001A60D0 /* FrameworkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF3B9C2BD246E2001A60D0 /* FrameworkListViewModel.swift */; };
+		9FEF3B9F2BD24B2F001A60D0 /* FrameworkDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF3B9E2BD24B2F001A60D0 /* FrameworkDetailViewModel.swift */; };
+		9FEF3BA12BD24CD1001A60D0 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF3BA02BD24CD1001A60D0 /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		9F3EAB7A2BCFF8A3008AB725 /* AppleFramework_SwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleFramework_SwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9F3EAB872BCFFE10008AB725 /* FrameworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkData.swift; sourceTree = "<group>"; };
 		9F3EAB892BCFFEA1008AB725 /* FrameworkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkCell.swift; sourceTree = "<group>"; };
+		9FEF3B9A2BD23541001A60D0 /* FrameworkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkDetailView.swift; sourceTree = "<group>"; };
+		9FEF3B9C2BD246E2001A60D0 /* FrameworkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkListViewModel.swift; sourceTree = "<group>"; };
+		9FEF3B9E2BD24B2F001A60D0 /* FrameworkDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkDetailViewModel.swift; sourceTree = "<group>"; };
+		9FEF3BA02BD24CD1001A60D0 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,10 @@
 			children = (
 				9F3EAB5D2BCFF8A2008AB725 /* AppleFramework_SwiftUIApp.swift */,
 				9F3EAB5F2BCFF8A2008AB725 /* ContentView.swift */,
+				9FEF3B9C2BD246E2001A60D0 /* FrameworkListViewModel.swift */,
+				9FEF3B9A2BD23541001A60D0 /* FrameworkDetailView.swift */,
+				9FEF3BA02BD24CD1001A60D0 /* SafariView.swift */,
+				9FEF3B9E2BD24B2F001A60D0 /* FrameworkDetailViewModel.swift */,
 				9F3EAB892BCFFEA1008AB725 /* FrameworkCell.swift */,
 				9F3EAB872BCFFE10008AB725 /* FrameworkData.swift */,
 				9F3EAB612BCFF8A3008AB725 /* Assets.xcassets */,
@@ -264,9 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3EAB8A2BCFFEA1008AB725 /* FrameworkCell.swift in Sources */,
+				9FEF3B9B2BD23541001A60D0 /* FrameworkDetailView.swift in Sources */,
+				9FEF3B9F2BD24B2F001A60D0 /* FrameworkDetailViewModel.swift in Sources */,
 				9F3EAB602BCFF8A2008AB725 /* ContentView.swift in Sources */,
+				9FEF3BA12BD24CD1001A60D0 /* SafariView.swift in Sources */,
 				9F3EAB5E2BCFF8A2008AB725 /* AppleFramework_SwiftUIApp.swift in Sources */,
 				9F3EAB882BCFFE10008AB725 /* FrameworkData.swift in Sources */,
+				9FEF3B9D2BD246E2001A60D0 /* FrameworkListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
